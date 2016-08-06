@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "start": "node server.js",
-    "server": "node --harmony ./src/server"
+    "server": "nodemon --harmony ./src/server"
   },
   "devDependencies": {
     "babel-loader": "6.2.4",
@@ -25,6 +25,8 @@
     "react": "15.3.0",
     "react-dom": "15.3.0",
     "react-redux": "4.4.5",
-    "redux": "3.5.2"
+    "redux": "3.5.2",
+    "request": "2.74.0",
+    "request-promise": "4.1.0"
   }
 }
