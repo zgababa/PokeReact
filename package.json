@@ -17,16 +17,23 @@
     "webpack-dev-server": "1.14.1"
   },
   "dependencies": {
+    "apollo-client": "0.4.11",
+    "babel-plugin-syntax-decorators": "6.13.0",
+    "bluebird": "3.4.1",
     "express": "4.14.0",
     "express-graphql": "0.5.3",
     "graphiql": "0.7.4",
     "graphql": "0.6.2",
     "immutable": "3.8.1",
+    "lodash.get": "4.4.1",
+    "radium": "0.18.1",
     "react": "15.3.0",
     "react-dom": "15.3.0",
     "react-redux": "4.4.5",
+    "redis": "2.6.2",
     "redux": "3.5.2",
     "request": "2.74.0",
-    "request-promise": "4.1.0"
+    "request-promise": "4.1.0",
+    "superagent": "2.1.0"
   }
 }

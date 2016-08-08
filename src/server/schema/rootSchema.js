@@ -1,20 +1,18 @@
 "use strict";
 
 const graphql = require('graphql');
-const pokemonType = require('./pokemon/pokemonType');
-const client = require('../client');
+const pokemonType = require('./pokemon/pokemon');
 
 const schema = new graphql.GraphQLSchema({
   query: new graphql.GraphQLObjectType({
     name: 'Query',
     fields: {
-      pokemon: {
-        type: pokemonType,
-        args: {
-          id: { type: graphql.GraphQLString }
-        },
-        resolve: (_, args) => client.getPokemon(args.id)
-      }
+      pokemon : pokemonType,
+      pokemons : {
+        type : new graphql.GraphQLList(pokemonType.type),
+        args : pokemonType.args,
+        resolve : pokemonType.resolve
+      },
     }
   })
 });
