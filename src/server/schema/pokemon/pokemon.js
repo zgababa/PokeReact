@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const graphql = require('graphql');
 const client = require('./pokemon.client');
@@ -17,7 +17,7 @@ const pokemonType = new graphql.GraphQLObjectType({
     },
     orderFormatted : {
       type : graphql.GraphQLString,
-      resolve : (pokemon) => "# " + pokemon.order,
+      resolve : (pokemon) => '# ' + pokemon.order,
     },
     img : {
       type : graphql.GraphQLString,

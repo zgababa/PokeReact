@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-const host = 'http://pokeapi.co/api/v2/';
 const request = require('request-promise');
 const path = require('path');
 const Promise = require('bluebird');
+const host = 'http://pokeapi.co/api/v2/';
 
 function getPokemon(id) {
   return request({

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import request from 'superagent';
 const host = 'http://localhost:8080';
