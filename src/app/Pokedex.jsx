@@ -40,7 +40,7 @@ class Pokedex extends React.Component {
   render() {
     return (
       <div style={styles.background}>
-        <Screen isLoading={this.state.isLoading} pokemon={this.state.pokemon} />
+        <Screen isLoading={false} pokemon={this.state.pokemon} />
         <Paddle arrowRight={this.arrowRight} arrowLeft={this.arrowLeft}/>
         <ScreenInfo pokemon={this.state.pokemon} />
         <DetailInfo pokemon={this.state.pokemon} />
