@@ -4,8 +4,8 @@ const graphql = require('graphql');
 const client = require('./pokemon.client');
 
 const pokemonType = new graphql.GraphQLObjectType({
-  name: 'PokemonType',
-  fields: {
+  name : 'PokemonType',
+  fields : {
     id : {
       type : graphql.GraphQLString
     },
@@ -17,7 +17,7 @@ const pokemonType = new graphql.GraphQLObjectType({
     },
     orderFormatted : {
       type : graphql.GraphQLString,
-      resolve : (pokemon) => '# ' + pokemon.order,
+      resolve : (pokemon) => `#  ${pokemon.order}`
     },
     img : {
       type : graphql.GraphQLString,
@@ -30,10 +30,10 @@ module.exports = {
   type : pokemonType,
   args : {
     id : {
-      type: graphql.GraphQLInt
+      type : graphql.GraphQLInt
     }
   },
-  resolve: (_, args) => {
+  resolve : (_, args) => {
     if (args.id) {
       return client.getPokemon(args.id);
     }

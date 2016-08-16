@@ -1,20 +1,20 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
 
-var APP_DIR = path.resolve(__dirname, 'src/app');
+const APP_DIR = path.resolve(__dirname, 'src/app');
 
-var config = {
-  entry: [
-  'webpack-dev-server/client?http://0.0.0.0:3000',
-  'webpack/hot/only-dev-server',
-  APP_DIR + '/Pokedex.jsx',
+const config = {
+  entry : [
+    'webpack-dev-server/client?http://0.0.0.0:3000',
+    'webpack/hot/only-dev-server',
+    `${APP_DIR}/Pokedex.jsx`
   ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+  output : {
+    path : path.join(__dirname, 'dist'),
+    filename : 'bundle.js',
+    publicPath : '/static/'
   },
-  plugins: [
+  plugins : [
     new webpack.HotModuleReplacementPlugin()
   ],
   module : {

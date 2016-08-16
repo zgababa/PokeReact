@@ -4,15 +4,15 @@ const graphql = require('graphql');
 const pokemonType = require('./pokemon/pokemon');
 
 const schema = new graphql.GraphQLSchema({
-  query: new graphql.GraphQLObjectType({
-    name: 'Query',
-    fields: {
+  query : new graphql.GraphQLObjectType({
+    name : 'Query',
+    fields : {
       pokemon : pokemonType,
       pokemons : {
         type : new graphql.GraphQLList(pokemonType.type),
         args : pokemonType.args,
         resolve : pokemonType.resolve
-      },
+      }
     }
   })
 });

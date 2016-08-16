@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 
 import Screen from './components/Screen.jsx';
 import Paddle from './components/Paddle.jsx';
@@ -8,11 +8,20 @@ import ScreenInfo from './components/ScreenInfo.jsx';
 import DetailInfo from './components/DetailInfo.jsx';
 import getPokemon from './client';
 
+const styles = {
+  background : {
+    backgroundImage : 'url(img/pokedex.png)',
+    backgroundRepeat : 'no-repeat',
+    height : '600px',
+    position : 'relative'
+  }
+};
+
 @Radium
 class Pokedex extends React.Component {
   constructor() {
     super();
-    this.state = {i : 1, isLoading : true};
+    this.state = { i : 1, isLoading : true };
     this.arrowRight = this.arrowRight.bind(this);
     this.arrowLeft = this.arrowLeft.bind(this);
   }
@@ -21,7 +30,7 @@ class Pokedex extends React.Component {
   }
   makeRequest(index) {
     this.setState({
-      isLoading : true,
+      isLoading : true
     });
     return getPokemon(index).then((res) => {
       return this.setState({
@@ -41,21 +50,12 @@ class Pokedex extends React.Component {
     return (
       <div style={styles.background}>
         <Screen isLoading={false} pokemon={this.state.pokemon} />
-        <Paddle arrowRight={this.arrowRight} arrowLeft={this.arrowLeft}/>
+        <Paddle arrowRight={this.arrowRight} arrowLeft={this.arrowLeft} />
         <ScreenInfo pokemon={this.state.pokemon} />
         <DetailInfo pokemon={this.state.pokemon} />
       </div>
     );
-  };
+  }
 }
 
-const styles = {
-  background : {
-    backgroundImage: 'url(img/pokedex.png)',
-    backgroundRepeat: 'no-repeat',
-    height: '600px',
-    position: 'relative'
-  }
-};
-
-render(<Pokedex/>, document.getElementById('app'));
+render(<Pokedex />, document.getElementById('app'));

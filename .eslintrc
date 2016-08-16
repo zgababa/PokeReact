@@ -1,0 +1,16 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "node": true,
+    "browser": true,
+  },
+  "parser": "babel-eslint",
+  "rules" : {
+    "strict": [0, "global"],
+    comma-dangle: ["error", "never"],
+    "max-len": ["error", 120],
+    "key-spacing": ["error", { "beforeColon": true }],
+    "indent": ["error", 2],
+    "arrow-body-style": 0
+  }
+}

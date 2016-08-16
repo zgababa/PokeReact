@@ -3,18 +3,19 @@
 const request = require('request-promise');
 const path = require('path');
 const Promise = require('bluebird');
+
 const host = 'http://pokeapi.co/api/v2/';
 
 function getPokemon(id) {
   return request({
-    uri: host + path.join('pokemon-form', id.toString()),
+    uri : host + path.join('pokemon-form', id.toString()),
     json : true
   });
 }
 
 function getPokemons() {
   return request({
-    uri: host + path.join('pokemon-form'),
+    uri : host + path.join('pokemon-form'),
     json : true
   }).then((pokemons) => {
     const pokemonUrls = pokemons.results.map((pokemon) => request(pokemon.url));
