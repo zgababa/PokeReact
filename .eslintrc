@@ -1,8 +1,9 @@
 {
   "extends": "airbnb",
   "env": {
-    "node": true,
-    "browser": true,
+    "node" : true,
+    "browser" : true,
+    "mocha" : true
   },
   "parser": "babel-eslint",
   "rules" : {
@@ -11,6 +12,7 @@
     "max-len": ["error", 120],
     "key-spacing": ["error", { "beforeColon": true }],
     "indent": ["error", 2],
-    "arrow-body-style": 0
+    "arrow-body-style": 0,
+    "import/no-extraneous-dependencies" : 0
   }
 }
