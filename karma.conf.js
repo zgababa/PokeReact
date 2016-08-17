@@ -1,21 +1,19 @@
 'use strict';
 
-const babelify = require('babelify'); // eslint-disable-line no-unused-vars
 const appRootPath = require('app-root-path').path;
 const path = require('path');
 
 const distPath = path.join(appRootPath, '/dist');
-
 
 module.exports = (config) => {
   config.set({
     basePath : '',
     frameworks : ['browserify', 'mocha', 'chai'],
     files : [
-      path.join(appRootPath, 'src/**/*.spec.js')
+      path.join(appRootPath, 'src/app/*.spec.jsx')
     ],
     preprocessors : {
-      './src/**/*.spec.js' : ['browserify']
+      [path.join(appRootPath, 'src/**/*.spec.jsx')] : ['browserify']
     },
     browserify : {
       debug : true,
@@ -36,9 +34,9 @@ module.exports = (config) => {
     reporters : ['nyan'],
     port : 9876,
     colors : true,
-    logLevel : config.LOG_INFO,
+    logLevel : 'error',
     autoWatch : true,
     browsers : ['PhantomJS'],
-    singleRun : true
+    singleRun : false
   });
 };

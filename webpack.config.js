@@ -7,7 +7,7 @@ const config = {
   entry : [
     'webpack-dev-server/client?http://0.0.0.0:3000',
     'webpack/hot/only-dev-server',
-    `${APP_DIR}/Pokedex.jsx`
+    `${APP_DIR}/app.jsx`
   ],
   output : {
     path : path.join(__dirname, 'dist'),

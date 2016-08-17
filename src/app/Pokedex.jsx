@@ -1,6 +1,5 @@
 import React from 'react';
 import Radium from 'radium';
-import { render } from 'react-dom';
 
 import Screen from './components/Screen.jsx';
 import Paddle from './components/Paddle.jsx';
@@ -58,4 +57,4 @@ class Pokedex extends React.Component {
   }
 }
 
-render(<Pokedex />, document.getElementById('app'));
+export default Pokedex;
