@@ -31,7 +31,7 @@ function Screen(props) {
 }
 
 Screen.propTypes = {
-  isLoading : PropTypes.boolean
+  isLoading : PropTypes.bool
 };
 
 export default new Radium(Screen);

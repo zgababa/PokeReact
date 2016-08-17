@@ -8,7 +8,7 @@ const distPath = path.join(appRootPath, '/dist');
 module.exports = (config) => {
   config.set({
     basePath : '',
-    frameworks : ['browserify', 'mocha', 'chai'],
+    frameworks : ['browserify', 'mocha', 'chai', 'phantomjs-shim'],
     files : [
       path.join(appRootPath, 'src/app/*.spec.jsx')
     ],
