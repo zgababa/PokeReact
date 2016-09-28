@@ -2,6 +2,7 @@
 
 const graphql = require('graphql');
 const client = require('./pokemon.client');
+const get = require('lodash.get');
 
 const pokemonType = new graphql.GraphQLObjectType({
   name : 'PokemonType',
@@ -17,7 +18,7 @@ const pokemonType = new graphql.GraphQLObjectType({
     },
     orderFormatted : {
       type : graphql.GraphQLString,
-      resolve : (pokemon) => `#  ${pokemon.order}`
+      resolve : (pokemon) => (get(pokemon, 'order') ? `# ${pokemon.order}` : '')
     },
     img : {
       type : graphql.GraphQLString,
@@ -34,7 +35,7 @@ module.exports = {
     }
   },
   resolve : (_, args) => {
-    if (args.id) {
+    if (get(args, 'id')) {
       return client.getPokemon(args.id);
     }
     return client.getPokemons();
