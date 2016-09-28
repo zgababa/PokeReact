@@ -30,8 +30,8 @@ const styles = {
 function Paddle(props) {
   return (
     <div>
-      <button style={styles.rightArrow} onClick={props.arrowRight} />
-      <button style={styles.leftArrow} onClick={props.arrowLeft} />
+      <button className="Paddle-right" style={styles.rightArrow} onClick={props.arrowRight} />
+      <button className="Paddle-left" style={styles.leftArrow} onClick={props.arrowLeft} />
     </div>
   );
 }

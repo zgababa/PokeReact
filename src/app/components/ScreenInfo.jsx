@@ -7,10 +7,13 @@ import get from 'lodash.get';
 const styles = {
   info : {
     position : 'absolute',
-    top : '215px',
-    left : '515px',
+    top : '213px',
+    left : '446px',
+    width : '244px',
+    textAlign : 'center',
     color : 'whitesmoke',
     fontWeight : 'normal',
+    fontSize : '1.1em',
     textTransform : 'uppercase'
   }
 };

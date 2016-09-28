@@ -1,11 +1,12 @@
 import React from 'react';
 import Radium from 'radium';
+import get from 'lodash.get';
 
 import Screen from './components/Screen.jsx';
 import Paddle from './components/Paddle.jsx';
 import ScreenInfo from './components/ScreenInfo.jsx';
 import DetailInfo from './components/DetailInfo.jsx';
-import getPokemon from './client';
+import client from './client';
 
 const styles = {
   background : {
@@ -31,24 +32,24 @@ class Pokedex extends React.Component {
     this.setState({
       isLoading : true
     });
-    return getPokemon(index).then((res) => {
+    return client.getPokemon(index).then((res) => {
       return this.setState({
-        pokemon : res.body.pokemon,
+        pokemon : get(res, 'body.pokemon'),
         i : index,
         isLoading : false
       });
     });
   }
   arrowRight() {
-    this.makeRequest(this.state.i + 1);
+    return this.makeRequest(this.state.i + 1);
   }
   arrowLeft() {
-    this.makeRequest(this.state.i - 1);
+    return this.makeRequest(this.state.i - 1);
   }
   render() {
     return (
       <div style={styles.background}>
-        <Screen isLoading={false} pokemon={this.state.pokemon} />
+        <Screen pokemon={this.state.pokemon} />
         <Paddle arrowRight={this.arrowRight} arrowLeft={this.arrowLeft} />
         <ScreenInfo pokemon={this.state.pokemon} />
         <DetailInfo pokemon={this.state.pokemon} />

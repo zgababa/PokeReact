@@ -22,4 +22,7 @@ function getPokemon(idPokemon) {
   return request.get(uri);
 }
 
-export default getPokemon;
+
+module.exports = {
+  getPokemon
+};
