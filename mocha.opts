@@ -1,0 +1,4 @@
+--harmony
+--slow 1000
+--reporter spec
+--compilers js:babel-register

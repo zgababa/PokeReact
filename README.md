@@ -1,10 +1,13 @@
 # PokeReact
 
+Launch redis with :
+```redis-server```
+
 Launch the server with :
 ```npm run server```
 
 Launch the web app with :
-```npm start```
+```npm run client```
 
 Go on http://localhost:3000
 
