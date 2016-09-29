@@ -1,17 +1,19 @@
 # PokeReact
 
-Launch redis with :
-```redis-server```
+Install redis --> http://redis.io/
 
-Launch the server with :
-```npm run server```
+Launch in watch mode with :
+``npm run watch``
 
-Launch the web app with :
-```npm run client```
+Then go on http://localhost:3000
 
-Go on http://localhost:3000
 
-Then display Pokemons with arrows left and right on you new Pokedex !
+Build the application and run it :
+``npm run start``
+
+Then go on ``*./index.prod.html``
+
+Display Pokemons with arrows left and right on you new Pokedex !
 
 You can launch tests and linter with :
 ``` npm t```
