@@ -2,12 +2,13 @@
 'use strict';
 
 const express = require('express');
-
-const router = express.Router();
 const graphql = require('graphql').graphql;
-const cache = require('../cache');
 const graphqlHTTP = require('express-graphql');
 const schema = require('../schema/rootSchema');
+const cache = require('../cache');
+
+const router = express.Router();
+const redisClient = cache.createClient();
 
 router.use('/graphql', graphqlHTTP({
   schema,
@@ -21,12 +22,12 @@ router.get('/', (req, res) => {
     return res.status(500).send('You must provide a query');
   }
   return cache
-    .get(graphqlQuery)
+    .get(redisClient, graphqlQuery)
     .then((value) => {
       if (!value) {
         return graphql(schema, graphqlQuery)
           .then(response => response.data)
-          .then(cache.save(graphqlQuery));
+          .then(cache.save(redisClient, graphqlQuery));
       }
       return JSON.parse(value);
     })

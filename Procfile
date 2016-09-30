@@ -1,1 +1,1 @@
-web: redis-server & node ./src/server/index.js & node webpackServer.js
+web:  node ./src/server/index.js 
