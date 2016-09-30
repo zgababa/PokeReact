@@ -18,9 +18,16 @@ const styles = {
   },
   starting : {
     position : 'absolute',
-    top : '146px',
-    left : '36px',
-    width : '300px'
+    top : '167px',
+    left : '70px',
+    width : '230px'
+  },
+  white : {
+    position : 'absolute',
+    top : '167px',
+    left : '70px',
+    width : '230px',
+    backgroundColor : 'white'
   }
 };
 
@@ -32,16 +39,16 @@ class Screen extends React.Component {
   }
 
   componentDidMount() {
-    return setTimeout(() => this.setState({ isStarting : false }), 1900);
+    return setTimeout(() => this.setState({ isStarting : false }), 4200);
   }
 
   render() {
     return (
       <div>
         { this.state.isStarting ?
-          <img role="presentation" style={styles.starting} src="img/init.gif" /> :
-          <img role="presentation" style={styles.image} src={get(this.props, 'pokemon.img')} />
-        }
+          <img role="presentation" style={styles.starting} src="img/init.gif" /> : null }
+        { !this.state.isStarting ?
+          <img role="presentation" style={styles.image} src={get(this.props, 'pokemon.img')} /> : null }
       </div>
     );
   }
