@@ -44,7 +44,9 @@ class Pokedex extends React.Component {
     return this.makeRequest(this.state.i + 1);
   }
   arrowLeft() {
-    return this.makeRequest(this.state.i - 1);
+    if (this.state.i - 1) {
+      return this.makeRequest(this.state.i - 1);
+    }
   }
   render() {
     return (

@@ -16,6 +16,7 @@ const config = {
     filename : 'bundle.js',
     publicPath : '/static/'
   },
+  devtool : 'source-map',
   plugins : [
     new webpack.HotModuleReplacementPlugin()
   ],
