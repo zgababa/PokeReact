@@ -5,6 +5,8 @@ const Promise = require('bluebird');
 const redis = require('redis');
 const url = require('url');
 
+process.env.REDISTOGO_URL = 'redis://redistogo:1576568405e84ef5a0ed5c2df79e22bb@porgy.redistogo.com:9937/';
+
 Promise.promisifyAll(redis.RedisClient.prototype);
 Promise.promisifyAll(redis.Multi.prototype);
 

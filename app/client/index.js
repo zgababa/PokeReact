@@ -2,7 +2,7 @@
 
 import request from 'superagent';
 
-const host = 'http://localhost:8080';
+const path = '/graphql';
 const queryParam = '?graphqlQuery=';
 
 function getQuery(idPokemon) {
@@ -18,7 +18,7 @@ function getQuery(idPokemon) {
 }
 
 function getPokemon(idPokemon) {
-  const uri = host + queryParam + getQuery(idPokemon);
+  const uri = path + queryParam + getQuery(idPokemon);
   return request.get(uri);
 }
 

@@ -8,11 +8,11 @@ import sinon from 'sinon';
 import Promise from 'bluebird';
 
 import Pokedex from './Pokedex.jsx';
-import Screen from './components/Screen.jsx';
-import Paddle from './components/Paddle.jsx';
-import ScreenInfo from './components/ScreenInfo.jsx';
-import DetailInfo from './components/DetailInfo.jsx';
-import client from './client';
+import Screen from './Screen.jsx';
+import Paddle from './Paddle.jsx';
+import ScreenInfo from './ScreenInfo.jsx';
+import DetailInfo from './DetailInfo.jsx';
+import client from '../client';
 
 const expect = chai.expect;
 const sandbox = sinon.sandbox.create();

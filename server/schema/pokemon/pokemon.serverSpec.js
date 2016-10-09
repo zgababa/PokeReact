@@ -9,7 +9,6 @@ const client = require('./pokemon.client');
 const pokemon = require('./pokemon');
 
 const pokemonType = pokemon.type;
-const pokemonResolve = pokemon.resolve;
 const sandbox = sinon.sandbox.create();
 const expect = chai.expect;
 

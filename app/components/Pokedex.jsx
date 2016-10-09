@@ -2,15 +2,15 @@ import React from 'react';
 import Radium from 'radium';
 import get from 'lodash.get';
 
-import Screen from './components/Screen.jsx';
-import Paddle from './components/Paddle.jsx';
-import ScreenInfo from './components/ScreenInfo.jsx';
-import DetailInfo from './components/DetailInfo.jsx';
-import client from './client';
+import Screen from './Screen.jsx';
+import Paddle from './Paddle.jsx';
+import ScreenInfo from './ScreenInfo.jsx';
+import DetailInfo from './DetailInfo.jsx';
+import client from '../client';
 
 const styles = {
   background : {
-    backgroundImage : 'url(img/pokedex.png)',
+    backgroundImage : 'url(pokedex.png)',
     backgroundRepeat : 'no-repeat',
     height : '600px',
     position : 'relative'

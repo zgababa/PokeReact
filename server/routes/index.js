@@ -10,13 +10,13 @@ const cache = require('../cache');
 const router = express.Router();
 const redisClient = cache.createClient();
 
-router.use('/graphql', graphqlHTTP({
+router.use('/graphiql', graphqlHTTP({
   schema,
   pretty : true,
   graphiql : true
 }));
 
-router.get('/', (req, res) => {
+router.get('/graphql', (req, res) => {
   const graphqlQuery = req.query.graphqlQuery;
   if (!graphqlQuery) {
     return res.status(500).send('You must provide a query');

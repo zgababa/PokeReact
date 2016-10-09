@@ -10,10 +10,10 @@ module.exports = (config) => {
     basePath : '',
     frameworks : ['browserify', 'mocha', 'chai', 'phantomjs-shim'],
     files : [
-      path.join(appRootPath, 'src/app/*.spec.jsx')
+      path.join(appRootPath, 'app/*.spec.jsx')
     ],
     preprocessors : {
-      [path.join(appRootPath, 'src/**/*.spec.jsx')] : ['browserify']
+      [path.join(appRootPath, 'app/**/*.spec.jsx')] : ['browserify']
     },
     browserify : {
       debug : true,

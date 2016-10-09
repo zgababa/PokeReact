@@ -1,6 +1,7 @@
 node_modules
-dist/
+dist/bundle.js
 npm-debug.log
 .DS_Store
 .eslintcache
 dump.rdb
+.idea
