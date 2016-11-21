@@ -46,7 +46,7 @@ class Screen extends React.Component {
     return (
       <div>
         { this.state.isStarting ?
-          <img role="presentation" style={styles.starting} src="init.gif" /> : null
+          <img role="presentation" style={styles.starting} src="/init.gif" /> : null
         }
         { !this.state.isStarting ?
           <img role="presentation" style={styles.image} src={get(this.props, 'pokemon.img')} /> : null

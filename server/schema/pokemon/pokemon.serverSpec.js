@@ -58,13 +58,13 @@ describe('pokemon', () => {
     afterEach(() => sandbox.restore());
 
     it('Should call getPokemons when no id provided', () => {
-      pokemonResolve();
+      pokemon.resolve();
       expect(client.getPokemon).to.not.have.been.called;
       expect(client.getPokemons).to.have.been.called;
     });
 
     it('Should call getPokemons when no id provided', () => {
-      pokemonResolve(null, { id : 'id' });
+      pokemon.resolve(null, { id : 'id' });
       expect(client.getPokemon).to.have.been.calledWith('id');
       expect(client.getPokemons).to.not.have.been.called;
     });

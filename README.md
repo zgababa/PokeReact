@@ -1,17 +1,12 @@
 # PokeReact
 
 Install redis --> http://redis.io/
+Install nodemon --> https://github.com/remy/nodemon
 
 Launch in watch mode with :
 ``npm run watch``
 
 Then go on http://localhost:3000
-
-
-Build the application and run it :
-``npm run start``
-
-Then go on ``*./index.prod.html``
 
 Display Pokemons with arrows left and right on you new Pokedex !
 

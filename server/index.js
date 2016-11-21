@@ -14,4 +14,4 @@ app.use(express.static('img'));
 app.use(express.static('dist'));
 
 const listener = app.listen(process.env.PORT || 3000);
-console.log('GraphQL server running on ', listener.address().port);
+console.log('Server running on port', listener.address().port);

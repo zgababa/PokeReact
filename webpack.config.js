@@ -2,22 +2,19 @@
 
 const path = require('path');
 const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const APP_DIR = path.resolve(__dirname, 'app');
 
 const config = {
-  entry : [
-    'webpack-dev-server/client?http://0.0.0.0:3000',
-    'webpack/hot/only-dev-server',
-    `${APP_DIR}/app.jsx`
-  ],
+  entry : `${APP_DIR}/app.jsx`,
   output : {
     path : path.join(__dirname, 'dist'),
-    filename : 'bundle.js',
-    publicPath : '/static/'
+    filename : 'bundle.js'
   },
   devtool : 'source-map',
   plugins : [
+    new CleanWebpackPlugin(['dist'], { root : __dirname }),
     new webpack.HotModuleReplacementPlugin()
   ],
   module : {

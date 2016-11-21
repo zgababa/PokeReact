@@ -3,14 +3,13 @@
 const appRootPath = require('app-root-path').path;
 const path = require('path');
 
-const distPath = path.join(appRootPath, '/dist');
 
 module.exports = (config) => {
   config.set({
     basePath : '',
     frameworks : ['browserify', 'mocha', 'chai', 'phantomjs-shim'],
     files : [
-      path.join(appRootPath, 'app/*.spec.jsx')
+      path.join(appRootPath, 'app/**/*.spec.jsx')
     ],
     preprocessors : {
       [path.join(appRootPath, 'app/**/*.spec.jsx')] : ['browserify']
@@ -18,9 +17,6 @@ module.exports = (config) => {
     browserify : {
       debug : true,
       transform : ['babelify'],
-      paths : [
-        distPath
-      ],
       extensions : ['.js', '.jsx'],
       configure : (bundle) => {
         bundle.on('prebundle', () => {
