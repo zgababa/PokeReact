@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --config webpack.config.js -p",
-    "start": "npm-run-all --parallel build redis server",
+    "start": "(npm run redis &); npm run build && npm run server",
     "watch": "npm-run-all --parallel redis server dev",
     "server": "nodemon --watch server --harmony server/index.js",
     "dev": "node node_modules/webpack/bin/webpack.js --watch",
@@ -69,10 +69,10 @@
     "npm-run-all": "3.1.0",
     "radium": "0.18.1",
     "react": "15.3.0",
-    "react-dom": "15.3.0",
     "redis": "2.6.2",
     "request-promise": "4.1.0",
     "superagent": "2.1.0",
-    "urijs": "1.18.2"
+    "urijs": "1.18.2",
+    "copy-webpack-plugin": "4.0.1"
   }
 }
