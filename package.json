@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config.js -p",
-    "start": "npm run build && node --harmony server/index.js",
+    "start": "nodemon --harmony index.js",
     "watch": "npm-run-all --parallel redis server dev",
     "server": "nodemon --watch server --harmony server/index.js",
     "dev": "node node_modules/webpack/bin/webpack.js --watch",
