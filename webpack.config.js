@@ -5,20 +5,20 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const APP_DIR = path.resolve(__dirname, 'app');
-const distPath = path.join(__dirname, 'dist');
+const APP_DIR = path.resolve('app');
+const DIST_PATH = path.resolve('dist');
 
 const config = {
   entry : `${APP_DIR}/app.jsx`,
   output : {
-    path : distPath,
+    path : DIST_PATH,
     filename : 'bundle.js'
   },
   devtool : 'source-map',
   plugins : [
-    new CleanWebpackPlugin(['dist'], { root : __dirname }),
+    new CleanWebpackPlugin([DIST_PATH], { root : __dirname }),
     new webpack.HotModuleReplacementPlugin(),
-    new CopyWebpackPlugin([{ from : `${APP_DIR}/index.html`, to : distPath }]),
+    new CopyWebpackPlugin([{ from : `${APP_DIR}/index.html`, to : DIST_PATH }]),
     new webpack.DefinePlugin({
       'process.env' : {
         NODE_ENV : JSON.stringify('production')
