@@ -18,7 +18,13 @@ const config = {
   plugins : [
     new CleanWebpackPlugin(['dist'], { root : __dirname }),
     new webpack.HotModuleReplacementPlugin(),
-    new CopyWebpackPlugin([{ from : `${APP_DIR}/index.html`, to : distPath }])
+    new CopyWebpackPlugin([{ from : `${APP_DIR}/index.html`, to : distPath }]),
+    new webpack.DefinePlugin({
+      'process.env' : {
+        NODE_ENV : JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   module : {
     loaders : [
