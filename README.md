@@ -1,4 +1,7 @@
 # PokeReact
+___
+[![Build Status](https://semaphoreci.com/api/v1/zgababa/pokereact/branches/master/badge.svg)](https://semaphoreci.com/zgababa/pokereact)
+
 
 Install redis --> http://redis.io/
 Install nodemon --> https://github.com/remy/nodemon
