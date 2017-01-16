@@ -6,3 +6,4 @@ npm-debug.log
 dump.rdb
 .idea
 dist/
+config/production.json

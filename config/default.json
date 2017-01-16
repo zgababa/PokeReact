@@ -1,5 +1,8 @@
 {
-  "cache" : {
-      "url" : "redis://redistogo:1576568405e84ef5a0ed5c2df79e22bb@porgy.redistogo.com:9937/"
+  "docker" : {
+    "port" : "3001"
+  },
+  "app" : {
+    "port" : "3000"
   }
 }

@@ -4,7 +4,6 @@ import request from 'superagent';
 
 const path = '/graphql';
 const queryParam = '?graphqlQuery=';
-
 function getQuery(idPokemon) {
   return encodeURIComponent(`
     {

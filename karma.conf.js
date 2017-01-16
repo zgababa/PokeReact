@@ -1,18 +1,16 @@
 'use strict';
 
-const appRootPath = require('app-root-path').path;
 const path = require('path');
-
 
 module.exports = (config) => {
   config.set({
     basePath : '',
     frameworks : ['browserify', 'mocha', 'chai', 'phantomjs-shim'],
     files : [
-      path.join(appRootPath, 'app/**/*.spec.jsx')
+      path.resolve('app/**/*.spec.jsx')
     ],
     preprocessors : {
-      [path.join(appRootPath, 'app/**/*.spec.jsx')] : ['browserify']
+      [path.resolve('app/**/*.spec.jsx')] : ['browserify']
     },
     browserify : {
       debug : true,
