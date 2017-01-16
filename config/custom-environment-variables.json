@@ -1,5 +1,8 @@
 {
   "cache" : {
     "url" : "REDISTOGO_URL"
+  },
+  "app" : {
+    "port" : "PORT"
   }
 }
