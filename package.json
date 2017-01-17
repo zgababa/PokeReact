@@ -6,9 +6,9 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.config-prod.js -p",
     "start": "node index.js",
-    "watch": "concurrently --kill-others \"npm run client\" \"npm run server\"",
-    "server": "node node_modules/nodemon/bin/nodemon.js index.js",
-    "client": "node node_modules/webpack/bin/webpack.js --watch",
+    "watch": "node node_modules/.bin/concurrently --kill-others \"npm run client\" \"npm run server\"",
+    "server": "node node_modules/.bin/nodemon index.js",
+    "client": "node node_modules/.bin/webpack --watch",
     "lint": "eslint --cache --ext .js,.jsx .",
     "test-client": "NODE_ENV=test karma start ./karma.conf.js --singleRun true --autoWatch false --reporters spec",
     "test-client-watch": "NODE_ENV=test karma start ./karma.conf.js --singleRun false --autoWatch true --reporters spec",

@@ -1,5 +1,5 @@
 # PokeReact
-___
+
 [![Build Status](https://semaphoreci.com/api/v1/zgababa/pokereact/branches/master/badge.svg)](https://semaphoreci.com/zgababa/pokereact)
 
 
