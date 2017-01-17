@@ -4,7 +4,8 @@ services:
   app:
     build: .
     volumes:
-    - "./:/app"
+    - './:/app'
+    - '/app/node_modules'
     expose:
       - '3000'
     ports:
