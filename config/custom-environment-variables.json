@@ -3,6 +3,7 @@
     "url" : "REDISTOGO_URL"
   },
   "app" : {
-    "port" : "PORT"
+    "port" : "PORT",
+    "docker" : "FROMDOCKER"
   }
 }

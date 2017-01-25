@@ -3,7 +3,6 @@
 
 const Promise = require('bluebird');
 const redis = require('redis');
-const url = require('url');
 const config = require('config');
 const get = require('lodash.get');
 
@@ -12,19 +11,11 @@ Promise.promisifyAll(redis.Multi.prototype);
 
 module.exports = {
   createClient() {
-    try {
-      if (get(config, 'cache.url')) {
-        const redisUrl = url.parse(config.cache.url);
-        const client = redis.createClient(redisUrl.port, redisUrl.hostname);
-        if (redisUrl.auth) {
-          client.auth(redisUrl.auth.split(':')[1]);
-        }
-        return client;
-      }
-      return redis.createClient({ host : 'redis' });
-    } catch (e) {
-      console.log('Error in connection with redis :', e);
-    }
+    const client = config.app.docker
+      ? redis.createClient({ host : 'redis' })
+      : redis.createClient(get(config, 'cache.url'));
+    client.on('error', (err) => console.error(err.toString()));
+    return client;
   },
   save(client, key) {
     return (value) => client.setAsync(key, JSON.stringify(value)).then(() => value);

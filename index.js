@@ -18,5 +18,6 @@ app.get('/', (req, res) => {
 });
 app.use(routes);
 app.listen(config.app.port, () => {
-  console.log('Server running on port', config.app.port);
+  const port = config.app.docker ? '3OO1' : config.app.port;
+  console.log('Application running on port', port);
 });
