@@ -14,7 +14,8 @@
     "test-client-watch": "NODE_ENV=test karma start ./karma.conf.js --singleRun false --autoWatch true --reporters spec",
     "test-server": "mocha --opts ./mocha.opts 'server/**/*.serverSpec.js'",
     "test-server-watch": "mocha --watch --opts ./mocha.opts 'server/**/*.serverSpec.js'",
-    "test": "npm run test-client && npm run test-server",
+    "test-integration": "mocha --timeout 5000 'server/**/*.integrationSpec.js'",
+    "test": "npm run test-client && npm run test-server && npm run test-integration",
     "posttest": "npm run lint"
   },
   "engineStrict": true,
