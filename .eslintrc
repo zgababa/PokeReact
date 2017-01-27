@@ -8,7 +8,7 @@
   "parser": "babel-eslint",
   "rules" : {
     "strict": [0, "global"],
-    comma-dangle: ["error", "never"],
+    "comma-dangle": ["error", "never"],
     "max-len": ["error", 120],
     "key-spacing": ["error", { "beforeColon": true }],
     "indent": ["error", 2],
@@ -16,6 +16,6 @@
     "import/no-extraneous-dependencies": 0,
     "react/require-extension": 0,
     "no-unused-expressions" : 0,
-    "consistent-return" : 0,
+    "consistent-return" : 0
   }
 }
