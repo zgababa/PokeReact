@@ -1,34 +1,25 @@
 'use strict';
 
 const path = require('path');
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const APP_DIR = path.resolve('app');
 const DIST_PATH = path.resolve('dist');
 
-const config = {
+module.exports = {
   entry : `${APP_DIR}/app.jsx`,
   output : {
     path : DIST_PATH,
     filename : 'bundle.js'
   },
-  devtool : 'source-map',
-  plugins : [
-    new CleanWebpackPlugin([DIST_PATH], { root : __dirname }),
-    new webpack.HotModuleReplacementPlugin(),
-    new CopyWebpackPlugin([{ from : `${APP_DIR}/index.html`, to : DIST_PATH }])
-  ],
   module : {
-    loaders : [
-      {
-        test : /\.jsx?/,
-        loaders : ['react-hot', 'babel'],
-        include : APP_DIR
-      }
-    ]
-  }
+    rules : [{
+      test : /\.(js|jsx)$/,
+      use : 'babel-loader',
+      include : APP_DIR
+    }]
+  },
+  plugins : [
+    new HtmlWebpackPlugin({ template : path.join(APP_DIR, 'index.html'), hash : true })
+  ]
 };
-
-module.exports = config;

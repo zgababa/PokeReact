@@ -12,15 +12,14 @@ import Screen from './Screen.jsx';
 import Paddle from './Paddle.jsx';
 import ScreenInfo from './ScreenInfo.jsx';
 import DetailInfo from './DetailInfo.jsx';
-import client from '../client';
+import * as getPokemonStub from '../client/getPokemon';
 
 const expect = chai.expect;
 const sandbox = sinon.sandbox.create();
 chai.use(sinonChai);
 
-
 describe('Pokedex', () => {
-  beforeEach(() => sandbox.stub(client, 'getPokemon'));
+  beforeEach(() => sandbox.stub(getPokemonStub, 'getPokemon'));
   afterEach(() => sandbox.restore());
 
   it('Should have a Screen', () => {
@@ -49,27 +48,27 @@ describe('Pokedex', () => {
   });
 
   it('Should getPokemon when initialization', () => {
-    client.getPokemon.returns(Promise.resolve());
+    getPokemonStub.getPokemon.returns(Promise.resolve());
     mount(<Pokedex />);
 
-    expect(client.getPokemon).to.have.been.calledOnce;
-    expect(client.getPokemon).to.have.been.calledWith(1);
+    expect(getPokemonStub.getPokemon).to.have.been.calledOnce;
+    expect(getPokemonStub.getPokemon).to.have.been.calledWith(1);
   });
 
   it('Should getPokemon with id + 1 when click on right arrow', () => {
-    client.getPokemon.returns(Promise.resolve());
+    getPokemonStub.getPokemon.returns(Promise.resolve());
     const component = mount(<Pokedex />);
     component.setState({
       i : 3
     });
 
     component.find('.Paddle-right').simulate('click');
-    expect(client.getPokemon).to.have.been.calledTwice;
-    expect(client.getPokemon).to.have.been.calledWith(4);
+    expect(getPokemonStub.getPokemon).to.have.been.calledTwice;
+    expect(getPokemonStub.getPokemon).to.have.been.calledWith(4);
   });
 
   it('Should getPokemon with id + 1 when click on left arrow', () => {
-    client.getPokemon.returns(Promise.resolve());
+    getPokemonStub.getPokemon.returns(Promise.resolve());
     const component = mount(<Pokedex />);
     component.setState({
       i : 3
@@ -77,7 +76,7 @@ describe('Pokedex', () => {
 
     component.find('.Paddle-left').simulate('click');
 
-    expect(client.getPokemon).to.have.been.calledTwice;
-    expect(client.getPokemon).to.have.been.calledWith(2);
+    expect(getPokemonStub.getPokemon).to.have.been.calledTwice;
+    expect(getPokemonStub.getPokemon).to.have.been.calledWith(2);
   });
 });

@@ -6,7 +6,7 @@ import Screen from './Screen.jsx';
 import Paddle from './Paddle.jsx';
 import ScreenInfo from './ScreenInfo.jsx';
 import DetailInfo from './DetailInfo.jsx';
-import client from '../client';
+import { getPokemon } from '../client/getPokemon';
 
 const styles = {
   background : {
@@ -17,7 +17,6 @@ const styles = {
   }
 };
 
-@Radium
 class Pokedex extends React.Component {
   constructor() {
     super();
@@ -32,7 +31,7 @@ class Pokedex extends React.Component {
     this.setState({
       isLoading : true
     });
-    return client.getPokemon(index).then((res) => {
+    return getPokemon(index).then((res) => {
       return this.setState({
         pokemon : get(res, 'body.pokemon'),
         i : index,
@@ -44,7 +43,7 @@ class Pokedex extends React.Component {
     return this.makeRequest(this.state.i + 1);
   }
   arrowLeft() {
-    if (this.state.i - 1) {
+    if (this.state.i) {
       return this.makeRequest(this.state.i - 1);
     }
   }
@@ -60,4 +59,4 @@ class Pokedex extends React.Component {
   }
 }
 
-export default Pokedex;
+export default new Radium(Pokedex);
