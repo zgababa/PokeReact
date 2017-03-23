@@ -2,6 +2,8 @@
 
 [![Build Status](https://semaphoreci.com/api/v1/zgababa/pokereact/branches/master/badge.svg)](https://semaphoreci.com/zgababa/pokereact)
 
+See it in action ! https://poke-react.herokuapp.com/
+
 >This project was created to test, learn, discover some technologies like
   - GraphQL
   - React
@@ -9,7 +11,7 @@
   - Continous integration with Semaphore
   - Deployment with Heroku
 
-And with this tutorial which begin here -> http://improvecoding.com/index.php/2017/01/21/build-a-graphql-server-and-catch-em-all/
+There is a tutorial to re-code this project -> http://improvecoding.com/en/build-graphql-server/ in french -> http://improvecoding.com/fr/tuto-serveur-graphql/
 
 --------
 
